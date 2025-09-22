@@ -1,0 +1,106 @@
+/* =========================================
+   Navbar Styles - Scoped & Responsive
+   ========================================= */
+
+/* -----------------------------------------
+   Navbar Container
+----------------------------------------- */
+.site-navbar {
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* Inner wrapper for alignment and spacing */
+.site-navbar .navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    gap: 12px;
+}
+
+/* -----------------------------------------
+   Branding
+----------------------------------------- */
+.site-navbar .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.site-navbar .navbar-logo {
+    height: 36px;
+    width: auto;
+    display: block;
+}
+
+.site-navbar .navbar-brand-text {
+    font-weight: 800;
+    color: #1f7a3a;
+    font-size: 1.1rem;
+}
+
+/* -----------------------------------------
+   Navigation Links
+----------------------------------------- */
+.site-navbar .navbar-links {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.site-navbar .navbar-link {
+    color: #1f7a3a;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 6px 8px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+.site-navbar .navbar-link:hover {
+    background: #f1f7f3;
+}
+
+/* -----------------------------------------
+   Mobile / Toggle
+----------------------------------------- */
+.site-navbar .navbar-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    /* Hide links by default */
+    .site-navbar .navbar-links {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 64px;
+        padding: 12px 20px;
+        border-top: 1px solid rgba(0,0,0,0.05);
+    }
+
+    /* Show links when navbar is open */
+    .site-navbar.open .navbar-links {
+        display: flex;
+    }
+
+    /* Show toggle button */
+    .site-navbar .navbar-toggle {
+        display: block;
+    }
+}

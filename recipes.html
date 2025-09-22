@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Recipes – GreenBite</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<link href="css/style.css" rel="stylesheet"/>  
+<link rel="stylesheet" href="css/navbar.css">
+</head>
+<body class="font-sans antialiased text-gray-800">
+
+<!-- Navbar -->
+<nav class="site-navbar">
+  <div class="navbar-inner container mx-auto px-4 flex justify-between items-center py-4">
+    <a class="nav-brand flex items-center" href="index.html">
+      <img src="assets/images/logo/greenbite.png" alt="GreenBite Logo" class="navbar-logo h-10 mr-2">
+      <span class="navbar-brand-text text-xl font-bold text-green-700">GreenBite</span>
+    </a>
+    <div class="navbar-links flex space-x-6">
+      <a class="navbar-link" href="index.html">Home</a>
+        <a class="navbar-link" href="recipes.html">Recipes</a>
+        <a class="navbar-link" href="workout.html">Workout</a>
+        <a class="navbar-link" href="mindfulness.html">Mindfulness</a>
+        <a class="navbar-link" href="calculator.html">Calculator</a>
+        <a class="navbar-link" href="contact.html">Contact</a>
+    </div>
+    <button class="navbar-toggle text-2xl md:hidden">☰</button>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="gradient-bg py-20 md:py-28">
+  <div class="container mx-auto px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight" data-aos="fade-up">
+        <span class="relative inline-block">
+          <span class="absolute inset-0 bg-gradient-to-r from-green-400 to-green-600 transform -skew-y-3"></span>
+          <span class="relative text-white px-4 py-2">Chef-Curated</span>
+        </span>
+        <br class="md:hidden"/>Healthy recipes<br/>
+        <span class="inline-block mt-4 text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-green-700 border-b-4 border-green-200 pb-2">Nutritious • Balanced • Flavorful</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-700 mb-10 max-w-3xl mx-auto leading-normal" data-aos="fade-up" data-aos-delay="100">
+        Expertly crafted meals designed by nutritionists and chefs to deliver optimal health benefits without sacrificing gourmet flavor. For those who expect both wellness and culinary excellence.
+      </p>
+      <div class="relative overflow-hidden rounded-lg shadow-lg max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+        <img alt="Gourmet healthy food presentation" class="w-full h-auto object-cover" src="https://static.photos/food/1200x630/42"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent flex items-end p-8">
+          <div class="text-white">
+            <p class="text-sm uppercase tracking-wider mb-1">Featured Recipe</p>
+            <h3 class="text-2xl font-bold">Mediterranean Salmon Bowl</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Real Food Section -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4" data-aos="fade-up">Real Food, Real Fast</h2>
+      <p class="text-xl text-gray-600" data-aos="fade-up" data-aos-delay="100">
+        Healthy eating shouldn't be complicated. If your days are packed and you're craving meals that fuel you without slowing you down, you're in the right place. I've put together six of my favorite dishes that are quick to make, clean, and delicious.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Recipes Section -->
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">The Recipes</h2>
+    <p class="text-xl text-center text-gray-600 mb-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+      Each one ready in 30 minutes or less with simple, fresh ingredients
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Recipe Cards -->
+      <div class="recipe-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+        <div class="overflow-hidden">
+          <img alt="Grilled Lemon Herb Chicken Salad" class="recipe-image w-full h-64 object-cover" src="assets/images/recipes/recipe-1-grilled-lemon-herb-chicken-salad-ai-1754405285.webp"/>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-gray-800 mb-3">Grilled Lemon Herb Chicken Salad</h3>
+          <p class="text-gray-600 mb-4">Juicy chicken with fresh greens and a zesty lemon dressing.</p>
+          <a class="text-green-600 font-medium hover:text-green-700 flex items-center" href="#">View Recipe <i class="ml-2 w-4 h-4" data-feather="arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="recipe-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+        <div class="overflow-hidden">
+          <img alt="Quinoa and Black Bean Bowl" class="recipe-image w-full h-64 object-cover" src="assets/images/recipes/recipe-2-quinoa-and-black-bean-bowl-ai-1754405298.webp"/>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-gray-800 mb-3">Quinoa and Black Bean Bowl</h3>
+          <p class="text-gray-600 mb-4">Protein-packed bowl with fresh veggies and avocado.</p>
+          <a class="text-green-600 font-medium hover:text-green-700 flex items-center" href="#">View Recipe <i class="ml-2 w-4 h-4" data-feather="arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="recipe-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+        <div class="overflow-hidden">
+          <img alt="Zucchini Noodle Stir-Fry" class="recipe-image w-full h-64 object-cover" src="assets/images/recipes/recipe-3-zucchini-noodle-stir-fry-ai-1754405312.webp"/>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-gray-800 mb-3">Zucchini Noodle Stir-Fry</h3>
+          <p class="text-gray-600 mb-4">Light and flavorful veggie-packed stir-fry.</p>
+          <a class="text-green-600 font-medium hover:text-green-700 flex items-center" href="#">View Recipe <i class="ml-2 w-4 h-4" data-feather="arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="recipe-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up">
+        <div class="overflow-hidden">
+          <img alt="Broiled Salmon with Garlic Asparagus" class="recipe-image w-full h-64 object-cover" src="assets/images/recipes/recipe-4-broiled-salmon-with-garlic-asparagus-ai-1754405322.webp"/>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-gray-800 mb-3">Broiled Salmon with Garlic Asparagus</h3>
+          <p class="text-gray-600 mb-4">Omega-3 rich salmon with perfectly roasted asparagus.</p>
+          <a class="text-green-600 font-medium hover:text-green-700 flex items-center" href="#">View Recipe <i class="ml-2 w-4 h-4" data-feather="arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="recipe-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+        <div class="overflow-hidden">
+          <img alt="Chickpea and Veggie Power Wraps" class="recipe-image w-full h-64 object-cover" src="assets/images/recipes/recipe-5-chickpea-and-veggie-power-wraps-ai-1754405334.webp"/>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-gray-800 mb-3">Chickpea and Veggie Power Wraps</h3>
+          <p class="text-gray-600 mb-4">Fiber-rich wraps perfect for lunch on the go.</p>
+          <a class="text-green-600 font-medium hover:text-green-700 flex items-center" href="#">View Recipe <i class="ml-2 w-4 h-4" data-feather="arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="recipe-card bg-white rounded-xl shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+        <div class="overflow-hidden">
+          <img alt="Greek Yogurt Berry Parfait" class="recipe-image w-full h-64 object-cover" src="assets/images/recipes/recipe-6-greek-yogurt-berry-parfait-ai-1754405344.webp"/>
+        </div>
+        <div class="p-6">
+          <h3 class="text-2xl font-bold text-gray-800 mb-3">Greek Yogurt Berry Parfait</h3>
+          <p class="text-gray-600 mb-4">Creamy yogurt layered with fresh berries and granola.</p>
+          <a class="text-green-600 font-medium hover:text-green-700 flex items-center" href="#">View Recipe <i class="ml-2 w-4 h-4" data-feather="arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Kitchen Essentials Section -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-12" data-aos="fade-up">Kitchen Essentials</h2>
+    <p class="text-xl text-center text-gray-600 mb-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+      Tools & Ingredients for Success
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+      <!-- Must-Have Tools -->
+      <div class="bg-gray-50 p-8 rounded-xl" data-aos="fade-up">
+        <div class="flex items-center mb-6">
+          <div class="bg-green-100 p-3 rounded-full mr-4">
+            <i class="text-green-600 w-6 h-6" data-feather="tool"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800">Must-Have Kitchen Tools</h3>
+        </div>
+        <ul class="space-y-3">
+          <li class="flex items-start"><i class="text-green-500 mr-3 mt-1 w-4 h-4" data-feather="check"></i>Nonstick skillet or cast iron pan</li>
+          <li class="flex items-start"><i class="text-green-500 mr-3 mt-1 w-4 h-4" data-feather="check"></i>Sharp chef's knife</li>
+          <li class="flex items-start"><i class="text-green-500 mr-3 mt-1 w-4 h-4" data-feather="check"></i>Cutting boards</li>
+          <li class="flex items-start"><i class="text-green-500 mr-3 mt-1 w-4 h-4" data-feather="check"></i>Blender or food processor</li>
+          <li class="flex items-start"><i class="text-green-500 mr-3 mt-1 w-4 h-4" data-feather="check"></i>Sheet pan for roasting</li>
+        </ul>
+      </div>
+
+      <!-- Clean Eating Staples -->
+      <div class="bg-gray-50 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex items-center mb-6">
+          <div class="bg-green-100 p-3 rounded-full mr-4">
+            <i class="text-green-600 w-6 h-6" data-feather="shopping-bag"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800">Clean Eating Staples</h3>
+        </div>
+        <ul class="space-y-3">
+          <li class="flex items-start"><i class="text-green-500 mr-3 mt-1 w-4 h-4" data-feather="check"></i>Fresh leafy greens & veggies</li>
+          <li class="flex items-start"><i class="text-green-500 mr-3 mt-1 w-4 h-4" data-feather="check"></i>Lean proteins (chicken, fish, tofu)</li>
+          <li class="flex items-start"><i class="text-green-500 mr-3 mt-1 w-4 h-4" data-feather="check"></i>Whole grains like quinoa</li>
+          <li class="flex items-start"><i class="text-green-500 mr-3 mt-1 w-4 h-4" data-feather="check"></i>Eggs & healthy fats</li>
+        </ul>
+      </div>
+
+      <!-- Pro Tips -->
+      <div class="bg-gray-50 p-8 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex items-center mb-6">
+          <div class="bg-green-100 p-3 rounded-full mr-4">
+            <i class="text-green-600 w-6 h-6" data-feather="lightbulb"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800">Pro Tips for Busy Cooks</h3>
+        </div>
+        <ul class="space-y-3">
+          <li class="flex items-start"><i class="text-green-500 mr-3 mt-1 w-4 h-4" data-feather="check"></i>Pre-chop veggies</li>
+          <li class="flex items-start"><i class="text-green-500 mr-3 mt-1 w-4 h-4" data-feather="check"></i>Store healthy foods at eye level</li>
+          <li class="flex items-start"><i class="text-green-500 mr-3 mt-1 w-4 h-4" data-feather="check"></i>Limit processed snacks</li>
+          <li class="flex items-start"><i class="text-green-500 mr-3 mt-1 w-4 h-4" data-feather="check"></i>Keep frozen grains & veggies</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-12">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="flex items-center mb-6 md:mb-0">
+        <img alt="GreenBite" class="h-10 mr-3" src="https://sineth7077.github.io/greenbite-wellness-site/images/logo-1.png"/>
+        <span class="text-2xl font-bold text-white">GreenBite</span>
+      </div>
+      <div class="flex space-x-6">
+        <a class="hover:text-green-400 transition duration-300" href="#"><i class="w-5 h-5" data-feather="instagram"></i></a>
+        <a class="hover:text-green-400 transition duration-300" href="#"><i class="w-5 h-5" data-feather="facebook"></i></a>
+        <a class="hover:text-green-400 transition duration-300" href="#"><i class="w-5 h-5" data-feather="twitter"></i></a>
+        <a class="hover:text-green-400 transition duration-300" href="#"><i class="w-5 h-5" data-feather="youtube"></i></a>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 mt-8 pt-8 text-center md:text-left">
+      <p class="text-gray-400">© 2024 GreenBite. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+  AOS.init({ duration: 800, once: true });
+  feather.replace();
+</script>
+<script src="js/nav.js"></script>
+</body>
+</html>
