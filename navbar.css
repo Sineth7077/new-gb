@@ -111,7 +111,6 @@
 /* =========================================
    JavaScript Toggle (Include in HTML)
 ========================================= */
-/*
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const navbar = document.querySelector(".site-navbar");
@@ -134,4 +133,3 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
-*/
