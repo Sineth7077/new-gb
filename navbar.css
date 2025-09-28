@@ -1,6 +1,6 @@
 /* =========================================
    Navbar Styles - Scoped & Responsive
-   ========================================= */
+========================================= */
 
 /* -----------------------------------------
    Navbar Container
@@ -13,7 +13,7 @@
     z-index: 999;
 }
 
-/* Inner wrapper for alignment and spacing */
+/* Inner wrapper */
 .site-navbar .navbar-inner {
     display: flex;
     align-items: center;
@@ -54,6 +54,7 @@
     gap: 18px;
     align-items: center;
     flex-wrap: wrap;
+    transition: max-height 0.3s ease;
 }
 
 .site-navbar .navbar-link {
@@ -62,11 +63,12 @@
     font-weight: 600;
     padding: 6px 8px;
     border-radius: 6px;
-    transition: background 0.2s;
+    transition: background 0.2s, color 0.2s;
 }
 
 .site-navbar .navbar-link:hover {
     background: #f1f7f3;
+    color: #17694A;
 }
 
 /* -----------------------------------------
@@ -76,12 +78,13 @@
     display: none;
     background: transparent;
     border: none;
-    font-size: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #1f7a3a;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 900px) {
-    /* Hide links by default */
     .site-navbar .navbar-links {
         display: none;
         flex-direction: column;
@@ -92,15 +95,43 @@
         top: 64px;
         padding: 12px 20px;
         border-top: 1px solid rgba(0,0,0,0.05);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
 
-    /* Show links when navbar is open */
     .site-navbar.open .navbar-links {
         display: flex;
+        max-height: 300px;
     }
 
-    /* Show toggle button */
     .site-navbar .navbar-toggle {
         display: block;
     }
 }
+
+/* =========================================
+   JavaScript Toggle (Include in HTML)
+========================================= */
+/*
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const navbar = document.querySelector(".site-navbar");
+  const toggleBtn = document.querySelector(".navbar-toggle");
+
+  toggleBtn.addEventListener("click", () => {
+    navbar.classList.toggle("open");
+
+    // Update ARIA for accessibility
+    const expanded = toggleBtn.getAttribute("aria-expanded") === "true";
+    toggleBtn.setAttribute("aria-expanded", !expanded);
+  });
+
+  // Optional: close menu when clicking a link (mobile)
+  document.querySelectorAll(".navbar-link").forEach(link => {
+    link.addEventListener("click", () => {
+      navbar.classList.remove("open");
+      toggleBtn.setAttribute("aria-expanded", false);
+    });
+  });
+});
+</script>
+*/
