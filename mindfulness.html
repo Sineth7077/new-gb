@@ -1,296 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Mindfulness — GreenBite</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-<link href="css/style.css" rel="stylesheet"/>
-<link href="css/navbar.css" rel="stylesheet"/>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Mindfulness — GreenBite</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+  <link href="assets/css/style.css" rel="stylesheet"/>
+  <link href="assets/css/navbar.css" rel="stylesheet"/>
+  <link href="assets/css/animations.css" rel="stylesheet"/>
+  <style>
+    #breath {
+      transition: transform 4s ease-in-out, box-shadow 4s ease-in-out;
+    }
+  </style>
 </head>
+
 <body class="min-h-screen flex flex-col bg-gray-50">
+  <div id="navbar"></div>
 
-<nav class="site-navbar relative bg-white shadow-md">
-  <div class="navbar-inner container mx-auto flex items-center justify-between px-6 py-4">
-    
-    <!-- Brand -->
-    <a class="nav-brand flex items-center" href="index.html">
-      <img src="assets/images/logo/greenbite.png" alt="GreenBite Logo" class="navbar-logo w-10 h-10 mr-2">
-      <span class="navbar-brand-text font-bold text-lg text-gray-800">GreenBite</span>
-    </a>
+  <main class="flex-grow container mx-auto px-4 py-12">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold text-center text-gray-800 mb-12">
+        Mindfulness Meditation
+      </h1>
 
-    <!-- Toggle button (mobile) -->
-    <button class="navbar-toggle md:hidden text-2xl" aria-label="Toggle menu">☰</button>
+      <!-- Session Timer -->
+      <div class="bg-white rounded-xl shadow-md p-8 mb-12" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="mb-8 md:mb-0 md:w-1/2">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+              Session Timer
+            </h2>
+            <div class="relative flex justify-center items-center mb-6">
+              <div class="timer-circle rounded-full flex items-center justify-center">
+                <div class="text-center">
+                  <div class="text-5xl font-bold text-gray-800" id="timer">
+                    00:00
+                  </div>
+                  <div class="text-gray-500 mt-2">minutes</div>
+                </div>
+              </div>
+            </div>
 
-    <!-- Links -->
-    <div class="navbar-links hidden md:flex flex-col md:flex-row gap-4 absolute md:static top-full left-0 w-full md:w-auto bg-white md:bg-transparent z-50 md:z-auto p-6 md:p-0">
-        <a class="navbar-link block md:inline-block text-gray-800 hover:text-green-600 font-medium" href="index.html">Home</a>
-        <a class="navbar-link block md:inline-block text-gray-800 hover:text-green-600 font-medium" href="recipes.html">Recipes</a>
-        <a class="navbar-link block md:inline-block text-gray-800 hover:text-green-600 font-medium" href="workout.html">Workout</a>
-        <a class="navbar-link block md:inline-block text-gray-800 hover:text-green-600 font-medium" href="mindfulness.html">Mindfulness</a>
-        <a class="navbar-link block md:inline-block text-gray-800 hover:text-green-600 font-medium" href="calculator.html">Calculator</a>
-        <a class="navbar-link block md:inline-block text-gray-800 hover:text-green-600 font-medium" href="contact.html">Contact</a>
-    </div>
+            <!-- Breathing Bubble -->
+            <div id="breathing-bubble" class="mt-6 flex justify-center">
+              <div id="breath" class="w-20 h-20 rounded-full bg-green-500 flex items-center justify-center text-white font-semibold shadow-lg opacity-90">
+                <span id="breathing-text">Ready</span>
+              </div>
+            </div>
 
-  </div>
-</nav>
+            <div class="flex justify-center space-x-4 mt-6">
+              <button class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition flex items-center" id="startBtn">
+                <i class="mr-2" data-feather="play"></i> Start
+              </button>
+              <button class="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300 transition flex items-center" disabled id="stopBtn">
+                <i class="mr-2" data-feather="pause"></i> Stop
+              </button>
+            </div>
+          </div>
 
-<!-- Main Content -->
-<main class="flex-grow container mx-auto px-4 py-12">
-  <div class="max-w-4xl mx-auto">
-    <h1 class="text-4xl font-bold text-center text-gray-800 mb-12">Mindfulness Meditation</h1>
+          <div class="md:w-1/2 md:pl-8">
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-lg font-medium text-gray-800 mb-4">
+                Session Stats
+              </h3>
+              <div class="mb-6">
+                <p class="text-gray-600">
+                  Completed sessions:
+                  <span class="font-bold text-green-600" id="sessions">0</span>
+                </p>
+              </div>
+              <div class="flex items-center">
+                <input checked class="rounded text-green-600 focus:ring-green-500" id="ambientSound" type="checkbox"/>
+                <label class="ml-2 text-gray-700" for="ambientSound">Play ambient sound</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <!-- Session Timer -->
-    <div class="bg-white rounded-xl shadow-md p-8 mb-12" data-aos="fade-up">
-      <div class="flex flex-col md:flex-row items-center justify-between">
-        <div class="mb-8 md:mb-0 md:w-1/2">
-          <h2 class="text-2xl font-semibold text-gray-800 mb-4">Session Timer</h2>
-          <div class="relative flex justify-center items-center mb-6">
-            <div class="timer-circle rounded-full flex items-center justify-center hovered-element">
+      <!-- Breathing Exercises -->
+      <div class="grid grid-cols-1 gap-8 max-w-5xl mx-auto">
+
+        <!-- 4-7-8 Breathing -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-aos="fade-up">
+          <div class="flex flex-col md:flex-row">
+            <div class="bg-green-600 p-8 flex items-center justify-center md:w-1/3">
               <div class="text-center">
-                <div class="text-5xl font-bold text-gray-800 hovered-element" id="timer">00:00</div>
-                <div class="text-gray-500 mt-2 hovered-element">minutes</div>
+                <div class="bg-white bg-opacity-20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                  <i class="w-10 h-10 text-white" data-feather="wind"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">4-7-8 Breathing</h3>
+                <p class="text-green-100">Calms anxiety and helps with sleep</p>
               </div>
             </div>
-          </div>
-          <div class="flex justify-center space-x-4">
-            <button class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition flex items-center" id="startBtn">
-              <i class="mr-2" data-feather="play"></i> Start
-            </button>
-            <button class="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300 transition flex items-center" disabled="" id="stopBtn">
-              <i class="mr-2" data-feather="pause"></i> Stop
-            </button>
+            <div class="p-8 md:w-2/3">
+              <div class="flex items-center text-green-600 mb-6">
+                <i class="mr-2" data-feather="clock"></i>
+                <span class="font-medium">5 min exercise</span>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div class="bg-green-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-green-800 mb-2">Step 1</h4>
+                  <p class="text-gray-700">Exhale completely through mouth</p>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-green-800 mb-2">Step 2</h4>
+                  <p class="text-gray-700">Inhale quietly through nose for 4s</p>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-green-800 mb-2">Step 3</h4>
+                  <p class="text-gray-700">Hold breath for 7 seconds</p>
+                </div>
+                <div class="bg-green-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-green-800 mb-2">Step 4</h4>
+                  <p class="text-gray-700">Exhale completely for 8 seconds</p>
+                </div>
+              </div>
+              <button class="w-full md:w-auto px-8 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition">
+                Start Exercise
+              </button>
+            </div>
           </div>
         </div>
 
-        <div class="md:w-1/2 md:pl-8">
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="text-lg font-medium text-gray-800 mb-4">Session Stats</h3>
-            <div class="mb-6">
-              <p class="text-gray-600">Completed sessions: <span class="font-bold text-green-600" id="sessions">0</span></p>
+        <!-- Box Breathing -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex flex-col md:flex-row">
+            <div class="bg-blue-600 p-8 flex items-center justify-center md:w-1/3">
+              <div class="text-center">
+                <div class="bg-white bg-opacity-20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                  <i class="w-10 h-10 text-white" data-feather="box"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">Box Breathing</h3>
+                <p class="text-blue-100">Improves focus and reduces stress</p>
+              </div>
             </div>
-            <div class="flex items-center">
-              <input checked="" class="rounded text-green-600 focus:ring-green-500" id="ambientSound" type="checkbox"/>
-              <label class="ml-2 text-gray-700" for="ambientSound">Play ambient sound</label>
+            <div class="p-8 md:w-2/3">
+              <div class="flex items-center text-blue-600 mb-6">
+                <i class="mr-2" data-feather="clock"></i>
+                <span class="font-medium">3-5 min exercise</span>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div class="bg-blue-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-blue-800 mb-2">Step 1</h4>
+                  <p class="text-gray-700">Inhale for 4 seconds</p>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-blue-800 mb-2">Step 2</h4>
+                  <p class="text-gray-700">Hold breath for 4 seconds</p>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-blue-800 mb-2">Step 3</h4>
+                  <p class="text-gray-700">Exhale for 4 seconds</p>
+                </div>
+                <div class="bg-blue-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-blue-800 mb-2">Step 4</h4>
+                  <p class="text-gray-700">Hold empty lungs for 4 seconds</p>
+                </div>
+              </div>
+              <button class="w-full md:w-auto px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition">
+                Start Exercise
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alternate Nostril -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex flex-col md:flex-row">
+            <div class="bg-purple-600 p-8 flex items-center justify-center md:w-1/3">
+              <div class="text-center">
+                <div class="bg-white bg-opacity-20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                  <i class="w-10 h-10 text-white" data-feather="activity"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2">Alternate Nostril</h3>
+                <p class="text-purple-100">Balances nervous system</p>
+              </div>
+            </div>
+            <div class="p-8 md:w-2/3">
+              <div class="flex items-center text-purple-600 mb-6">
+                <i class="mr-2" data-feather="clock"></i>
+                <span class="font-medium">5-7 min exercise</span>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div class="bg-purple-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-purple-800 mb-2">Step 1</h4>
+                  <p class="text-gray-700">Close right nostril, inhale left for 4s</p>
+                </div>
+                <div class="bg-purple-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-purple-800 mb-2">Step 2</h4>
+                  <p class="text-gray-700">Hold both closed for 4s</p>
+                </div>
+                <div class="bg-purple-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-purple-800 mb-2">Step 3</h4>
+                  <p class="text-gray-700">Exhale right for 8s</p>
+                </div>
+                <div class="bg-purple-50 p-4 rounded-lg">
+                  <h4 class="font-semibold text-purple-800 mb-2">Step 4</h4>
+                  <p class="text-gray-700">Repeat opposite side</p>
+                </div>
+              </div>
+              <button class="w-full md:w-auto px-8 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition">
+                Start Exercise
+              </button>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </main>
 
-    <!-- Breathing Cards -->
-    <div class="grid grid-cols-1 gap-8 max-w-5xl mx-auto">
-
-      <!-- 4-7-8 Breathing -->
-      <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-aos="fade-up">
-        <div class="flex flex-col md:flex-row">
-          <div class="bg-green-600 p-8 flex items-center justify-center md:w-1/3">
-            <div class="text-center">
-              <div class="bg-white bg-opacity-20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-                <i class="w-10 h-10 text-white" data-feather="wind"></i>
-              </div>
-              <h3 class="text-2xl font-bold text-white mb-2">4-7-8 Breathing</h3>
-              <p class="text-green-100">Calms anxiety and helps with sleep</p>
-            </div>
-          </div>
-          <div class="p-8 md:w-2/3">
-            <div class="flex items-center text-green-600 mb-6">
-              <i class="mr-2" data-feather="clock"></i>
-              <span class="font-medium">5 min exercise</span>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              <div class="bg-green-50 p-4 rounded-lg">
-                <h4 class="font-semibold text-green-800 mb-2">Step 1</h4>
-                <p class="text-gray-700">Exhale completely through mouth</p>
-              </div>
-              <div class="bg-green-50 p-4 rounded-lg">
-                <h4 class="font-semibold text-green-800 mb-2">Step 2</h4>
-                <p class="text-gray-700">Inhale quietly through nose for 4s</p>
-              </div>
-              <div class="bg-green-50 p-4 rounded-lg">
-                <h4 class="font-semibold text-green-800 mb-2">Step 3</h4>
-                <p class="text-gray-700">Hold breath for 7 seconds</p>
-              </div>
-              <div class="bg-green-50 p-4 rounded-lg">
-                <h4 class="font-semibold text-green-800 mb-2">Step 4</h4>
-                <p class="text-gray-700">Exhale completely for 8 seconds</p>
-              </div>
-            </div>
-            <button class="w-full md:w-auto px-8 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition">
-              Start Exercise
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Box Breathing -->
-      <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
-        <div class="flex flex-col md:flex-row">
-          <div class="bg-blue-600 p-8 flex items-center justify-center md:w-1/3">
-            <div class="text-center">
-              <div class="bg-white bg-opacity-20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-                <i class="w-10 h-10 text-white" data-feather="box"></i>
-              </div>
-              <h3 class="text-2xl font-bold text-white mb-2">Box Breathing</h3>
-              <p class="text-blue-100">Improves focus and reduces stress</p>
-            </div>
-          </div>
-          <div class="p-8 md:w-2/3">
-            <div class="flex items-center text-blue-600 mb-6">
-              <i class="mr-2" data-feather="clock"></i>
-              <span class="font-medium">3-5 min exercise</span>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              <div class="bg-blue-50 p-4 rounded-lg">
-                <h4 class="font-semibold text-blue-800 mb-2">Step 1</h4>
-                <p class="text-gray-700">Inhale for 4 seconds</p>
-              </div>
-              <div class="bg-blue-50 p-4 rounded-lg">
-                <h4 class="font-semibold text-blue-800 mb-2">Step 2</h4>
-                <p class="text-gray-700">Hold breath for 4 seconds</p>
-              </div>
-              <div class="bg-blue-50 p-4 rounded-lg">
-                <h4 class="font-semibold text-blue-800 mb-2">Step 3</h4>
-                <p class="text-gray-700">Exhale for 4 seconds</p>
-              </div>
-              <div class="bg-blue-50 p-4 rounded-lg">
-                <h4 class="font-semibold text-blue-800 mb-2">Step 4</h4>
-                <p class="text-gray-700">Hold empty lungs for 4 seconds</p>
-              </div>
-            </div>
-            <button class="w-full md:w-auto px-8 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition">
-              Start Exercise
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Alternate Nostril -->
-      <div class="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
-        <div class="flex flex-col md:flex-row">
-          <div class="bg-purple-600 p-8 flex items-center justify-center md:w-1/3">
-            <div class="text-center">
-              <div class="bg-white bg-opacity-20 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
-                <i class="w-10 h-10 text-white" data-feather="activity"></i>
-              </div>
-              <h3 class="text-2xl font-bold text-white mb-2">Alternate Nostril</h3>
-              <p class="text-purple-100">Balances nervous system</p>
-            </div>
-          </div>
-          <div class="p-8 md:w-2/3">
-            <div class="flex items-center text-purple-600 mb-6">
-              <i class="mr-2" data-feather="clock"></i>
-              <span class="font-medium">5-7 min exercise</span>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              <div class="bg-purple-50 p-4 rounded-lg">
-                <h4 class="font-semibold text-purple-800 mb-2">Step 1</h4>
-                <p class="text-gray-700">Close right nostril, inhale left for 4s</p>
-              </div>
-              <div class="bg-purple-50 p-4 rounded-lg">
-                <h4 class="font-semibold text-purple-800 mb-2">Step 2</h4>
-                <p class="text-gray-700">Hold both closed for 4s</p>
-              </div>
-              <div class="bg-purple-50 p-4 rounded-lg">
-                <h4 class="font-semibold text-purple-800 mb-2">Step 3</h4>
-                <p class="text-gray-700">Exhale right for 8s</p>
-              </div>
-              <div class="bg-purple-50 p-4 rounded-lg">
-                <h4 class="font-semibold text-purple-800 mb-2">Step 4</h4>
-                <p class="text-gray-700">Repeat opposite side</p>
-              </div>
-            </div>
-            <button class="w-full md:w-auto px-8 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition">
-              Start Exercise
-            </button>
-          </div>
-        </div>
-      </div>
-
-    </div> <!-- End grid -->
-  </div> <!-- End max-w-4xl -->
-</main>
-
-<!-- Footer -->
-<footer class="bg-gray-800 text-white py-12">
-  <div class="container mx-auto px-4">
-    <div class="flex flex-col md:flex-row justify-between">
-      <div class="mb-8 md:mb-0">
-        <div class="flex items-center mb-4">
-          <img alt="GreenBite Logo" class="h-8 mr-2" src="https://sineth7077.github.io/greenbite-wellness-site/images/logo-1.png"/>
-          <span class="text-xl font-bold text-white">GreenBite</span>
-        </div>
-        <p class="text-gray-400 max-w-md">Helping you achieve wellness through nutrition, fitness, and mindfulness.</p>
-      </div>
-    </div>
-    <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-4 text-center text-gray-400 border-t border-gray-700 pt-8">
       <p>© 2023 GreenBite. All rights reserved.</p>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<script>
-AOS.init();
-
-// Feather icons
-feather.replace();
-
-// Timer functionality
-let timer;
-let minutes = 0;
-let seconds = 0;
-let isRunning = false;
-let sessionsCompleted = 0;
-
-const timerDisplay = document.getElementById('timer');
-const startBtn = document.getElementById('startBtn');
-const stopBtn = document.getElementById('stopBtn');
-const sessionsDisplay = document.getElementById('sessions');
-
-startBtn.addEventListener('click', () => {
-    if (!isRunning) {
-        isRunning = true;
-        startBtn.disabled = true;
-        stopBtn.disabled = false;
-        document.querySelector('.timer-circle').style.animationPlayState = 'running';
-        
-        timer = setInterval(() => {
-            seconds++;
-            if (seconds === 60) {
-                minutes++;
-                seconds = 0;
-            }
-            
-            const formattedMinutes = minutes.toString().padStart(2, '0');
-            const formattedSeconds = seconds.toString().padStart(2, '0');
-            timerDisplay.textContent = `${formattedMinutes}:${formattedSeconds}`;
-        }, 1000);
-    }
-});
-
-stopBtn.addEventListener('click', () => {
-    if (isRunning) {
-        clearInterval(timer);
-        isRunning = false;
-        startBtn.disabled = false;
-        stopBtn.disabled = true;
-        document.querySelector('.timer-circle').style.animationPlayState = 'paused';
-        
-        if (minutes > 0 || seconds > 30) {
-            sessionsCompleted++;
-            sessionsDisplay.textContent = sessionsCompleted;
-        }
-        
-        minutes = 0;
-        seconds = 0;
-        timerDisplay.textContent = '00:00';
-    }
-});
-</script>
-  <script src="main.js"></script>
+  <script src="assets/js/mindfulness.js"></script>
+  <script>
+    fetch("assets/components/navbar.html")
+      .then(res => res.text())
+      .then(data => { document.getElementById("navbar").innerHTML = data; });
+  </script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 </html>

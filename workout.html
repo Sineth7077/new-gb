@@ -1,226 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Workout — GreenBite</title>
-
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Workout — GreenBite
+  </title>
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
+  <script src="https://cdn.tailwindcss.com">
+  </script>
   <!-- AOS (Animate on Scroll) -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+  </script>
   <!-- Feather Icons -->
-  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-
+  <script src="https://unpkg.com/feather-icons/dist/feather.min.js">
+  </script>
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/navbar.css">
-</head>
-<body class="font-sans bg-gray-50">
-
-  <!-- Navigation -->
-  
-
-<nav class="site-navbar">
-  <div class="navbar-inner container">
-    <a class="nav-brand" href="index.html">
-      <img src="assets/images/logo/greenbite.png" alt="GreenBite Logo" class="navbar-logo">
-      <span class="navbar-brand-text">GreenBite</span>
-    </a>
-    <div class="navbar-links">
-        <a class="navbar-link" href="index.html">Home</a>
-        <a class="navbar-link" href="recipes.html">Recipes</a>
-        <a class="navbar-link" href="workout.html">Workout</a>
-        <a class="navbar-link" href="mindfulness.html">Mindfulness</a>
-        <a class="navbar-link" href="calculator.html">Calculator</a>
-        <a class="navbar-link" href="contact.html">Contact</a>
-    </div>
-    <button class="navbar-toggle" aria-label="Toggle menu">☰</button>
+  <link href="assets/css/style.css" rel="stylesheet"/>
+  <link href="assets/css/navbar.css" rel="stylesheet"/>
+  <link href="assets/css/style.css" rel="stylesheet"/>
+  <link href="assets/css/animations.css" rel="stylesheet"/>
+ </head>
+ <body class="font-sans bg-gray-50">
+  <div id="navbar">
   </div>
-</nav>
-
-
-
   <!-- Hero Section -->
   <div class="gradient-bg text-white">
-    <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl" data-aos="fade-down">
-        Your Personalized Workout
-      </h1>
-      <p class="mt-6 max-w-3xl mx-auto text-xl" data-aos="fade-up" data-aos-delay="200">
-        Get fit with customized exercises tailored to your needs
-      </p>
-    </div>
+   <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
+    <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl" data-aos="fade-down">
+     Your Personalized Workout
+    </h1>
+    <p class="mt-6 max-w-3xl mx-auto text-xl" data-aos="fade-up" data-aos-delay="200">
+     Get fit with customized exercises tailored to your needs
+    </p>
+   </div>
   </div>
-
   <!-- Workout Generator -->
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16" data-aos="fade-up">
-    <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 shadow-lg border border-green-200">
-      <h2 class="text-3xl font-bold text-green-800 mb-6 text-center">Create Your Perfect Workout</h2>
-      
-      <!-- Dropdowns -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-        <!-- Focus Area -->
-        <div class="space-y-2">
-          <div class="flex items-center">
-            <i data-feather="target" class="w-5 h-5 text-green-600 mr-2"></i>
-            <label for="body-part" class="block text-lg font-medium text-green-700">Focus Area</label>
-          </div>
-          <select id="body-part" class="mt-1 block w-full pl-4 pr-10 py-3 text-lg border-2 border-green-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 rounded-xl bg-white shadow-sm">
-            <option>Full Body</option>
-            <option>Upper Body</option>
-            <option>Lower Body</option>
-            <option>Core</option>
-            <option>Arms</option>
-            <option>Legs</option>
-          </select>
-        </div>
-
-        <!-- Equipment -->
-        <div class="space-y-2">
-          <div class="flex items-center">
-            <i data-feather="tool" class="w-5 h-5 text-green-600 mr-2"></i>
-            <label for="equipment" class="block text-lg font-medium text-green-700">Available Equipment</label>
-          </div>
-          <select id="equipment" class="mt-1 block w-full pl-4 pr-10 py-3 text-lg border-2 border-green-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 rounded-xl bg-white shadow-sm">
-            <option>No Equipment</option>
-            <option>Dumbbells</option>
-            <option>Resistance Bands</option>
-            <option>Yoga Mat</option>
-            <option>Kettlebells</option>
-          </select>
-        </div>
+   <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 shadow-lg border border-green-200">
+    <h2 class="text-3xl font-bold text-green-800 mb-6 text-center">
+     Create Your Perfect Workout
+    </h2>
+    <!-- Dropdowns -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+     <!-- Focus Area -->
+     <div class="space-y-2">
+      <div class="flex items-center">
+       <i class="w-5 h-5 text-green-600 mr-2" data-feather="target">
+       </i>
+       <label class="block text-lg font-medium text-green-700" for="body-part">
+        Focus Area
+       </label>
       </div>
-
-      <!-- Generate Button -->
-      <button class="btn-generate w-full flex items-center justify-center py-4 px-6 border border-transparent rounded-xl shadow-lg text-lg font-bold text-white bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 focus:outline-none focus:ring-4 focus:ring-green-300 transition-all duration-300">
-        <i data-feather="zap" class="w-6 h-6 mr-2"></i>
-        Generate Custom Workout
-      </button>
-
-      <!-- Workout Results -->
-      <div id="workout-results" class="mt-12 space-y-6 hidden">
-        <h3 class="text-2xl font-bold text-green-800 mb-6">Your Custom Workout Plan</h3>
-        
-        <div class="exercise-card bg-white rounded-xl p-6 shadow-md border-l-4 border-green-500">
-          <div class="flex flex-col md:flex-row md:items-center gap-6">
-            <img src="assets/images/full-body/burpee-1.jpg" alt="Exercise" class="w-[1280px] h-[720px] object-cover rounded-lg" />
-            
-            <div class="flex-1">
-              <div class="flex justify-between items-start">
-                <h4 class="text-xl font-bold text-gray-800">Push Ups</h4>
-                <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">Upper Body</span>
-              </div>
-              <p class="text-gray-600 mt-2">3 sets of 12 reps</p>
-
-              <div class="mt-4 flex items-center space-x-4">
-                <button class="start-timer flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition">
-                  <i data-feather="play" class="w-4 h-4 mr-2"></i> Start
-                </button>
-                <button class="stop-timer flex items-center px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition hidden">
-                  <i data-feather="square" class="w-4 h-4 mr-2"></i> Stop
-                </button>
-                <div class="timer-display text-gray-500 font-mono">00:00</div>
-              </div>
-            </div>
-          </div>
-
-          <button class="mt-4 w-full py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition flex items-center justify-center">
-            <i data-feather="play" class="w-4 h-4 mr-2"></i> Start Workout
-          </button>
-        </div>
+      <select class="mt-1 block w-full pl-4 pr-10 py-3 text-lg border-2 border-green-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 rounded-xl bg-white shadow-sm" id="body-part">
+       <option>
+        Full Body
+       </option>
+       <option>
+        Upper Body
+       </option>
+       <option>
+        Lower Body
+       </option>
+       <option>
+        Core
+       </option>
+       <option>
+        Arms
+       </option>
+       <option>
+        Legs
+       </option>
+      </select>
+     </div>
+     <!-- Equipment -->
+     <div class="space-y-2">
+      <div class="flex items-center">
+       <i class="w-5 h-5 text-green-600 mr-2" data-feather="tool">
+       </i>
+       <label class="block text-lg font-medium text-green-700" for="equipment">
+        Available Equipment
+       </label>
       </div>
+      <select class="mt-1 block w-full pl-4 pr-10 py-3 text-lg border-2 border-green-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 rounded-xl bg-white shadow-sm" id="equipment">
+       <option>
+        No Equipment
+       </option>
+       <option>
+        Dumbbells
+       </option>
+       <option>
+        Resistance Bands
+       </option>
+       <option>
+        Yoga Mat
+       </option>
+       <option>
+        Kettlebells
+       </option>
+      </select>
+     </div>
     </div>
+    <!-- Generate Button -->
+    <button class="btn-generate w-full flex items-center justify-center py-4 px-6 border border-transparent rounded-xl shadow-lg text-lg font-bold text-white bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 focus:outline-none focus:ring-4 focus:ring-green-300 transition-all duration-300">
+     <i class="w-6 h-6 mr-2" data-feather="zap">
+     </i>
+     Generate Custom Workout
+    </button>
+    <!-- Workout Results -->
+    <div class="mt-12 space-y-6 hidden" id="workout-results">
+     <h3 class="text-2xl font-bold text-green-800 mb-6">
+      Your Custom Workout Plan
+     </h3>
+     <div class="exercise-card bg-white rounded-xl p-6 shadow-md border-l-4 border-green-500">
+      <div class="flex flex-col md:flex-row md:items-center gap-6">
+       <img alt="Exercise" class="w-[1280px] h-[720px] object-cover rounded-lg" src="assets/images/burpee-1.jpg"/>
+       <div class="flex-1">
+        <div class="flex justify-between items-start">
+         <h4 class="text-xl font-bold text-gray-800">
+          Push Ups
+         </h4>
+         <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">
+          Upper Body
+         </span>
+        </div>
+        <p class="text-gray-600 mt-2">
+         3 sets of 12 reps
+        </p>
+        <div class="mt-4 flex items-center space-x-4">
+         <button class="start-timer flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition">
+          <i class="w-4 h-4 mr-2" data-feather="play">
+          </i>
+          Start
+         </button>
+         <button class="stop-timer flex items-center px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition hidden">
+          <i class="w-4 h-4 mr-2" data-feather="square">
+          </i>
+          Stop
+         </button>
+         <div class="timer-display text-gray-500 font-mono">
+          00:00
+         </div>
+        </div>
+       </div>
+      </div>
+      <button class="mt-4 w-full py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition flex items-center justify-center">
+       <i class="w-4 h-4 mr-2" data-feather="play">
+       </i>
+       Start Workout
+      </button>
+     </div>
+    </div>
+   </div>
   </div>
-
   <!-- Suggested Workouts -->
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <h2 class="text-3xl font-bold text-green-800 mb-10 text-center">Try These Workout Plans</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-      
-      <!-- Workout Card 1 -->
-      <div class="workout-card bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl" data-aos="fade-up">
-        <img src="assets/images/special-programs/full-body-burn.jpg" alt="Full Body Workout" class="w-[1280px] h-[720px] object-cover rounded-lg" />
-        <div class="p-6 bg-gradient-to-b from-white to-green-50">
-          <h3 class="text-xl font-bold text-green-800 mb-3">Full Body Burn</h3>
-          <p class="text-gray-600 mb-4">30-minute HIIT session targeting all major muscle groups.</p>
-          <div class="flex items-center text-sm text-green-600">
-            <i data-feather="clock" class="w-4 h-4 mr-1 text-green-500"></i><span>30 min</span>
-            <span class="mx-2 text-gray-300">•</span>
-            <i data-feather="activity" class="w-4 h-4 mr-1 text-green-500"></i><span>All Levels</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Workout Card 2 -->
-      <div class="workout-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-        <img src="assets/images/special-programs/core-strength.jpg" alt="Core Workout" class="w-[1280px] h-[720px] object-cover rounded-lg" />
-        <div class="p-6">
-          <h3 class="text-lg font-semibold text-gray-800 mb-2">Core Strength</h3>
-          <p class="text-gray-600 mb-4">20-minute focused workout to build a strong and stable core.</p>
-          <div class="flex items-center text-sm text-gray-500">
-            <i data-feather="clock" class="w-4 h-4 mr-1"></i><span>20 min</span>
-            <span class="mx-2">•</span>
-            <i data-feather="activity" class="w-4 h-4 mr-1"></i><span>Intermediate</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Workout Card 3 -->
-      <div class="workout-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-        <img src="assets/images/special-programs/yoga-flow.jpg" alt="Yoga Flow" class="w-[1280px] h-[720px] object-cover rounded-lg" />
-        <div class="p-6">
-          <h3 class="text-lg font-semibold text-gray-800 mb-2">Yoga Flow</h3>
-          <p class="text-gray-600 mb-4">45-minute relaxing yoga session to improve flexibility and mindfulness.</p>
-          <div class="flex items-center text-sm text-gray-500">
-            <i data-feather="clock" class="w-4 h-4 mr-1"></i><span>45 min</span>
-            <span class="mx-2">•</span>
-            <i data-feather="activity" class="w-4 h-4 mr-1"></i><span>All Levels</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Join Section -->
-  <div id="join" class="gradient-bg text-white py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 class="text-3xl font-bold mb-6" data-aos="fade-down">Join GreenBite Today</h2>
-      <p class="max-w-3xl mx-auto text-xl mb-8" data-aos="fade-up" data-aos-delay="100">
-        Get access to personalized workout plans, nutrition guides, and mindfulness exercises.
+   <h2 class="text-3xl font-bold text-green-800 mb-10 text-center">
+    Try These Workout Plans
+   </h2>
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+    <!-- Workout Card 1 -->
+    <div class="workout-card bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl" data-aos="fade-up">
+     <img alt="Full Body Workout" class="w-[1280px] h-[720px] object-cover rounded-lg" src="assets/images/full-body-burn.jpg"/>
+     <div class="p-6">
+      <h3 class="text-lg font-semibold text-gray-800 mb-2">
+       Full Body Burn
+      </h3>
+      <p class="text-gray-600 mb-4">
+       30-minute HIIT session targeting all major muscle groups.
       </p>
-      <button class="bg-white text-green-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300" data-aos="zoom-in" data-aos-delay="200">
-        Sign Up Now
-      </button>
+      <div class="flex items-center text-sm text-gray-600">
+       <i class="w-4 h-4 mr-1" data-feather="clock">
+       </i>
+       <span>
+        30 min
+       </span>
+       <span class="mx-2 text-gray-300">
+        •
+       </span>
+       <i class="w-4 h-4 mr-1" data-feather="activity">
+       </i>
+       <span>
+        All Levels
+       </span>
+      </div>
+     </div>
     </div>
+    <!-- Workout Card 2 -->
+    <div class="workout-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-aos="fade-up" data-aos-delay="100">
+     <img alt="Core Workout" class="w-[1280px] h-[720px] object-cover rounded-lg" src="assets/images/core-strength.jpg"/>
+     <div class="p-6">
+      <h3 class="text-lg font-semibold text-gray-800 mb-2">
+       Core Strength
+      </h3>
+      <p class="text-gray-600 mb-4">
+       20-minute focused workout to build a strong and stable core.
+      </p>
+      <div class="flex items-center text-sm text-gray-500">
+       <i class="w-4 h-4 mr-1" data-feather="clock">
+       </i>
+       <span>
+        20 min
+       </span>
+       <span class="mx-2">
+        •
+       </span>
+       <i class="w-4 h-4 mr-1" data-feather="activity">
+       </i>
+       <span>
+        Intermediate
+       </span>
+      </div>
+     </div>
+    </div>
+    <!-- Workout Card 3 -->
+    <div class="workout-card bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1" data-aos="fade-up" data-aos-delay="200">
+     <img alt="Yoga Flow" class="w-[1280px] h-[720px] object-cover rounded-lg" src="assets/images/yoga-flow.jpg"/>
+     <div class="p-6">
+      <h3 class="text-lg font-semibold text-gray-800 mb-2">
+       Yoga Flow
+      </h3>
+      <p class="text-gray-600 mb-4">
+       45-minute relaxing yoga session to improve flexibility and mindfulness.
+      </p>
+      <div class="flex items-center text-sm text-gray-500">
+       <i class="w-4 h-4 mr-1" data-feather="clock">
+       </i>
+       <span>
+        45 min
+       </span>
+       <span class="mx-2">
+        •
+       </span>
+       <i class="w-4 h-4 mr-1" data-feather="activity">
+       </i>
+       <span>
+        All Levels
+       </span>
+      </div>
+     </div>
+    </div>
+   </div>
   </div>
-
+  <!-- Join Section -->
+  <div class="gradient-bg text-white py-16" id="join">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-3xl font-bold mb-6" data-aos="fade-down">
+     Join GreenBite Today
+    </h2>
+    <p class="max-w-3xl mx-auto text-xl mb-8" data-aos="fade-up" data-aos-delay="100">
+     Get access to personalized workout plans, nutrition guides, and mindfulness exercises.
+    </p>
+    <button class="bg-white text-green-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300" data-aos="zoom-in" data-aos-delay="200">
+     Sign Up Now
+    </button>
+   </div>
+  </div>
   <!-- Footer -->
   <footer class="bg-gray-800 text-white py-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <p>© 2023 GreenBite. All rights reserved.</p>
-      </div>
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+     <p>
+      © 2025 GreenBite. All rights reserved.
+     </p>
     </div>
+   </div>
   </footer>
-
   <!-- Scripts -->
   <script>
-    AOS.init({
+   AOS.init({
       duration: 800,
       easing: "ease-in-out",
       once: true
     });
     feather.replace();
   </script>
-  <script src="workouts.js"></script>
-  <script src="app.js"></script>
+  <script src="assets/js/workouts.js">
+  </script>
+  <script src="assets/js/app.js">
+  </script>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+   document.addEventListener("DOMContentLoaded", function() {
       const links = document.querySelectorAll("nav a");
       links.forEach(link => {
         if (link.href === window.location.href) {
@@ -229,8 +290,17 @@
       });
     });
   </script>
-  <script src="workouts.js"></script>
-  <script src="js/nav.js"></script>
-  <script src="main.js"></script>
-</body>
+  <script src="assets/js/workouts.js">
+  </script>
+  <script src="assets/js/nav.js">
+  </script>
+  <script src="assets/js/main.js">
+  </script>
+  <script>
+   fetch("assets/components/navbar.html")
+  .then(res => res.text())
+  .then(data => { document.getElementById("navbar").innerHTML = data; });
+  </script>
+  
+ </body>
 </html>

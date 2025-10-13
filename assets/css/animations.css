@@ -1,0 +1,10 @@
+/* Consolidated Animations */
+@keyframes pulse {
+  50% { opacity: .5; }
+}
+
+.animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+
+.auto-2449109639687135538 { animation-delay: 0.2s; }
+
+.auto-6350287885247796779 { animation-delay: 0.4s; }

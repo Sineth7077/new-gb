@@ -108,3 +108,37 @@
     }
 }
 
+.navbar-links {
+  display: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-links.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  z-index: 999;
+}
+
+.navbar-toggle.active {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .navbar-links {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+  }
+}
+
